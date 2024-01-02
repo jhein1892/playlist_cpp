@@ -2,14 +2,19 @@
 #define PLAYLIST_H
 
 #include "Song.hpp"
+#include "Node.hpp"
+#include <map>
 
 class Playlist
 {
     public: 
         Playlist(Song song1);
+        void describePlaylist();
     
     private:
         void createNode(Song song);
+        std::map<std::string, Song*> playlist_map;
+
     // So for my constructor, for each song included in constructor, I want to create another node. 
     // Each node is going to need to have a song*, nextsong*, prevsong*
     // I'm going to need to keep track of my current node somehow
