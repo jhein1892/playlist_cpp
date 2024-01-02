@@ -8,9 +8,15 @@ class Song
 {
     public:
         Song(std::string title, std::string artist, std::string duration);
+
+        void describe();
+        void editSong();
     
     protected:
         std::map<std::string, std::string> song_map;
+    
+    private:
+        void updateValue(std::string key, std::string value);
 
 
 };

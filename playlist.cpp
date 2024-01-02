@@ -1,4 +1,5 @@
 #include <iostream>
+#include "Song.cpp"
 
 // I'll use OOP for this. I want to create an class for Song
     // Should have for data:
@@ -30,7 +31,10 @@
 
 int main()
 {
+    Song newSong = Song("Title", "Artist", "2:30");
 
+    newSong.describe();
+    newSong.editSong();
 
     return 0;
 }
