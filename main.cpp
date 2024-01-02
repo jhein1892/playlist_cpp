@@ -25,7 +25,8 @@ int main()
     Song song3 = Song("Title", "Artist", "2:30");
     Song song4 = Song("Title", "Artist", "2:30");
 
-    Playlist newPlaylist = Playlist(song1);
+    Playlist newPlaylist = Playlist();
+    newPlaylist.addSong(song1);
     
 
     return 0;

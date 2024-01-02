@@ -8,12 +8,14 @@
 class Playlist
 {
     public: 
-        Playlist(Song song1);
+        Playlist();
+        void addSong(Song song);
         void describePlaylist();
     
     private:
-        void createNode(Song song);
-        std::map<std::string, Song*> playlist_map;
+        Song* prevSong;
+        Song* startingSong = nullptr;
+        
 
     // So for my constructor, for each song included in constructor, I want to create another node. 
     // Each node is going to need to have a song*, nextsong*, prevsong*

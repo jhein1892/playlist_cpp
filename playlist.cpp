@@ -3,33 +3,25 @@
 
 using namespace std;
 
-Playlist::Playlist(Song song1)
+Playlist::Playlist()
 {
-    cout << "Song1 info " << &song1 << endl;
-    createNode(song1);
-    // song1.describe();
+    cout << "Please Add your first song" << endl;
 };
 
-void Playlist::createNode(Song song)
+void Playlist::addSong(Song song)
 {
-    std::cout << "IN CREATE NODE ---" << endl;
-    std::cout << &song << endl;
-    // Node CurrNode = Node(song);
-    // Node CurrNode = Node(song, nullptr, nullptr);
+    cout << &song << endl;
+    cout << startingSong << endl;
+    if(!startingSong)
+    {
+        cout << "seems to be first Song!" <<endl;
+    }
 
-    // playlist_map['start'] = CurrNode;
 }
+
+
 
 void Playlist::describePlaylist()
 {
-    // Song currSong = playlist_map['start'];
 
-    // while(currSong)
-    // {
-    //     cout << currSong << endl;
-
-    //     currSong = currSong['next']; 
-    // }
-
-    // cout << "Playlist done" << endl;
 }
