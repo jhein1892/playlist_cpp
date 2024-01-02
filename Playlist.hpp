@@ -2,7 +2,6 @@
 #define PLAYLIST_H
 
 #include "Song.hpp"
-#include "Node.hpp"
 #include <map>
 
 class Playlist
