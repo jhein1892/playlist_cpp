@@ -8,11 +8,13 @@ Song::Song(std::string title, std::string artist, std::string duration){
     song_map["duration"] = duration;
 }
 
+// Describes the Song
 void Song::describe()
 {
     std::cout << "Title: " << song_map["title"] << "\nArtist: " << song_map["artist"] << "\nDuration: " << song_map["duration"] << std::endl;
 }
 
+// Provides flow for editing song components
 void Song::editSong()
 {
     while(true)
