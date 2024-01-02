@@ -2,16 +2,16 @@
 #include <iostream>
 
 // Constructor for a new song
-Song::Song(std::string title, std::string artist, std::string duration){
-    song_map["title"] = title;
-    song_map["artist"] = artist;
-    song_map["duration"] = duration;
+Song::Song(std::string t, std::string a, std::string d){
+    title = t;
+    artist = a;
+    duration = d;
 }
 
 // Describes the Song
 void Song::describe()
 {
-    std::cout << "Title: " << song_map["title"] << "\nArtist: " << song_map["artist"] << "\nDuration: " << song_map["duration"] << std::endl;
+    std::cout << "Title: " << title << "\nArtist: " << artist << "\nDuration: " << duration << std::endl;
 }
 
 // Provides flow for editing song components
@@ -53,5 +53,5 @@ void Song::editSong()
 
 void Song::updateValue(std::string key, std::string value)
 {
-    song_map[key] = value;
+    key = value;
 }

@@ -10,25 +10,27 @@ Playlist::Playlist()
 
 void Playlist::addSong(Song song)
 {
-    cout << &song << endl;
-    cout << startingSong << endl;
     if(!startingSong)
-    {
-        std::cout << "seems to be first Song!" << std::endl;
+    {   
         startingSong = &song;
+        prevSong = &song;
     }
     else
     {
         song.prev = prevSong;
-        *prevSong -> next = song;
-        std::cout << "The first Song is: " << startingSong << std::endl;
+        prevSong->next= &song;
+        prevSong = &song;
     }
 
 }
 
-
-
 void Playlist::describePlaylist()
 {
-
+    Song* currSong = startingSong;
+    std::cout << "DESCRIBE ---" << std::endl;
+    while(currSong)
+    {
+        currSong->describe();
+        currSong = currSong->next;
+    }
 }
