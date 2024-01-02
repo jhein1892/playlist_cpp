@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Song.cpp"
+#include "Playlist.cpp"
 
 // Playlist is a linked list. The data, or node aspect of it will be a reference to a Song, the next will be the next location, and prev will be prev.
 // Each Node of playlist should have
@@ -24,6 +25,7 @@ int main()
     Song song3 = Song("Title", "Artist", "2:30");
     Song song4 = Song("Title", "Artist", "2:30");
 
+    Playlist newPlaylist = Playlist(song1);
     
 
     return 0;
