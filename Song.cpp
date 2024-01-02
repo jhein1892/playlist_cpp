@@ -20,32 +20,33 @@ void Song::editSong()
     std::string input;
     std::cout << "What would you like to edit:\nArtist 'a', Title 't', Duration 'd' ('q' to exit): ";
     std::getline(std::cin, input);
-    if(input == "a"){
-        std::cout << "Please enter new Artist Name: ";
 
-        std::string newArtist;
-        std::getline(std::cin, newArtist);
-        updateValue("artist", newArtist);
+    std::string newValue;
+    std::string key;
+    if(input == "a")
+    {
+        std::cout << "Please enter new Artist Name: ";
+        std::getline(std::cin, newValue);
+        key = "artist";
     } 
     else if (input == "t")
     {
         std::cout << "Please enter new Title: ";
-
-        std::string newTitle;
-        std::getline(std::cin, newTitle);
-        updateValue("title", newTitle);
+        std::getline(std::cin, newValue);
+        key = "title";
     } 
     else if (input == "d")
     {
         std::cout << "Please enter new Duration: ";
-
-        std::string newDur;
-        std::getline(std::cin, newDur);
-        updateValue("duration", newDur);
+        std::getline(std::cin, newValue);
+        key = "duration";
     }
     else if(input == "q"){ break; }
     else { std::cout << "I don't recognize the char " << input << std::endl; }
+
+    updateValue(key, newValue);
     }
+
 }
 
 void Song::updateValue(std::string key, std::string value)
