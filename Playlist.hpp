@@ -13,7 +13,7 @@ class Playlist
         void describePlaylist();
     
     private:
-        Song* prevSong;
+        Song* prevSong = nullptr;
         Song* startingSong = nullptr;
         
 

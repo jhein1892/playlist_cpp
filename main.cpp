@@ -27,6 +27,7 @@ int main()
 
     Playlist newPlaylist = Playlist();
     newPlaylist.addSong(song1);
+    newPlaylist.addSong(song2);
     
 
     return 0;

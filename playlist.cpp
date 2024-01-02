@@ -14,7 +14,14 @@ void Playlist::addSong(Song song)
     cout << startingSong << endl;
     if(!startingSong)
     {
-        cout << "seems to be first Song!" <<endl;
+        std::cout << "seems to be first Song!" << std::endl;
+        startingSong = &song;
+    }
+    else
+    {
+        song.prev = prevSong;
+        *prevSong -> next = song;
+        std::cout << "The first Song is: " << startingSong << std::endl;
     }
 
 }
