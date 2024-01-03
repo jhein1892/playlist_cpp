@@ -10,10 +10,12 @@ class Playlist
         Playlist();
         void addSong(Song song);
         void describePlaylist();
+        void cyclePlaylist();
     
     private:
         Song* prevSong = nullptr;
         Song* startingSong = nullptr;
+        void deleteSong(Song* song);
         
 
     // So for my constructor, for each song included in constructor, I want to create another node. 

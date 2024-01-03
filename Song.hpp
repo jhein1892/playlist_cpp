@@ -16,7 +16,7 @@ class Song
         Song* prev = nullptr;
     
     private:
-        void updateValue(std::string key, std::string value);
+        void updateValue(std::string* key, std::string value);
 
 
 };

@@ -11,7 +11,7 @@ Song::Song(std::string t, std::string a, std::string d){
 // Describes the Song
 void Song::describe()
 {
-    std::cout << "Title: " << title << "\nArtist: " << artist << "\nDuration: " << duration << std::endl;
+    std::cout << title << " by " << artist << " (" << duration << ")" << std::endl;
 }
 
 // Provides flow for editing song components
@@ -24,24 +24,24 @@ void Song::editSong()
     std::getline(std::cin, input);
 
     std::string newValue;
-    std::string key;
+    std::string* key;
     if(input == "a")
     {
         std::cout << "Please enter new Artist Name: ";
         std::getline(std::cin, newValue);
-        key = "artist";
+        key = &artist;
     } 
     else if (input == "t")
     {
         std::cout << "Please enter new Title: ";
         std::getline(std::cin, newValue);
-        key = "title";
+        key = &title;
     } 
     else if (input == "d")
     {
         std::cout << "Please enter new Duration: ";
         std::getline(std::cin, newValue);
-        key = "duration";
+        key = &duration;
     }
     else if(input == "q"){ break; }
     else { std::cout << "I don't recognize the char " << input << std::endl; }
@@ -49,9 +49,10 @@ void Song::editSong()
     updateValue(key, newValue);
     }
 
+    describe();
 }
 
-void Song::updateValue(std::string key, std::string value)
+void Song::updateValue(std::string* key, std::string value)
 {
-    key = value;
+    *key = value;   
 }

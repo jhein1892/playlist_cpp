@@ -21,9 +21,15 @@ int main()
     newPlaylist.addSong(song2);
     newPlaylist.addSong(song3);
 
-    newPlaylist.describePlaylist();    
+    // newPlaylist.describePlaylist(); 
     newPlaylist.addSong(song4);
 
-    newPlaylist.describePlaylist();    
+    // Need to figure out why Edit isn't sticking
+    // song3.editSong();
+
+
+    // newPlaylist.describePlaylist();    
+    // newPlaylist.describePlaylist();    
+    newPlaylist.cyclePlaylist();
     return 0;
 }
