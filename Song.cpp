@@ -14,45 +14,14 @@ void Song::describe()
     std::cout << title << " by " << artist << " (" << duration << ")" << std::endl;
 }
 
-// Provides flow for editing song components
-void Song::editSong()
-{
-    while(true)
-   { 
-    std::string input;
-    std::cout << "What would you like to edit:\nArtist 'a', Title 't', Duration 'd' ('q' to exit): ";
-    std::getline(std::cin, input);
+// Update Next Song
+void Song::updateNext(Song* song) { next = song; }
 
-    std::string newValue;
-    std::string* key;
-    if(input == "a")
-    {
-        std::cout << "Please enter new Artist Name: ";
-        std::getline(std::cin, newValue);
-        key = &artist;
-    } 
-    else if (input == "t")
-    {
-        std::cout << "Please enter new Title: ";
-        std::getline(std::cin, newValue);
-        key = &title;
-    } 
-    else if (input == "d")
-    {
-        std::cout << "Please enter new Duration: ";
-        std::getline(std::cin, newValue);
-        key = &duration;
-    }
-    else if(input == "q"){ break; }
-    else { std::cout << "I don't recognize the char " << input << std::endl; }
+// Update Previous Song
+void Song::updatePrev(Song* song) { prev = song; }
 
-    updateValue(key, newValue);
-    }
+// Return Next Song
+Song* Song::getNext() { return next; }
 
-    describe();
-}
-
-void Song::updateValue(std::string* key, std::string value)
-{
-    *key = value;   
-}
+// Return Previous Song
+Song* Song::getPrev() { return prev; }

@@ -18,8 +18,8 @@ void Playlist::addSong(Song song)
     }
     else
     {
-        song.prev = prevSong;
-        prevSong->next= &song;
+        song.updatePrev(prevSong);
+        prevSong->updateNext(&song);
         prevSong = &song;
     }
 
@@ -33,22 +33,22 @@ void Playlist::describePlaylist()
     while(currSong)
     {
         currSong->describe();
-        currSong = currSong->next;
+        currSong = currSong->getNext();
     }
 }
 
 // Removes Song through reassigning prev and next songs
 void Playlist::deleteSong(Song* song)
 {
-    Song* prevSong = song->prev;
-    Song* nextSong = song->next;
+    Song* prevSong = song->getPrev();
+    Song* nextSong = song->getNext();
     if(prevSong)
     {
-        prevSong->next = nextSong;
+        prevSong->updateNext(nextSong);
     }
     if(nextSong)
     {
-        nextSong->prev = prevSong;
+        nextSong->updatePrev(prevSong);
     }
 }
 
@@ -64,18 +64,18 @@ void Playlist::cyclePlaylist()
         std::getline(std::cin, input);
         if(input == "n")
         {
-            currSong = currSong ->next;
+            currSong = currSong->getNext();
         }
         else if(input == "p")
         {
-            currSong = currSong->prev;
+            currSong = currSong->getPrev();
         }
         else if (input == "d")
         {
             deleteSong(currSong);
 
-            if(currSong->prev) { currSong = currSong->prev; } 
-            else { currSong = currSong->next; }
+            if(currSong->getPrev()) { currSong = currSong->getPrev(); } 
+            else { currSong = currSong->getNext(); }
         }
         else if (input == "q")
         {
